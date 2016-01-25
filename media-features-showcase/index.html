@@ -1,0 +1,36 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Media-Features Showcase</title>
+  <link href="style.css" rel="stylesheet">
+  <link href="normalize.css" rel="stylesheet">
+  <script src="jquery.js" type="text/javascript"></script>
+  <script src="mq4-hover-shim.js" type="text/javascript"></script>
+</head>
+<body>
+  <div>
+    <button type="button" class="vclButton">
+      <div class="vclIcogram">
+        <span id="buttonLabel" class="vclText">Doesn't supports Hovering</span>
+      </div>
+    </button>
+  </div>
+
+  <script>
+    try{
+      var hoverSupport = window.mq4HoverShim.supportsTrueHover();
+      if (hoverSupport) {
+        document.body.className = "hoverSupport";
+        document.getElementById("buttonLabel").innerHTML = "Supports Hovering";
+      } else {
+        document.getElementById("buttonLabel").innerHTML = "Doesn't supports Hovering";
+      }
+      console.log('Hoversupport: ' + hoverSupport);
+    } catch(e) {
+      console.log(e.name + ': ' + e.message);
+    }
+  </script>
+</body>
+</html>
